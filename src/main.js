@@ -5,11 +5,14 @@ import AdminNewsPage from "./pages/admin/news";
 import AdminNewsAddPage from "./pages/admin/news/add";
 import DetailNewsPage from "./pages/detail";
 import HomePage from "./pages/home";
+import Signin from "./pages/signin";
+import Signup from "./pages/signup";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
 const print = async (content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
+    if (content.afterRender) content.afterRender(id);
 };
 
 router.on({
@@ -19,6 +22,8 @@ router.on({
     "/admin/dashboard": () => print(DashboardPage),
     "/admin/news": () => print(AdminNewsPage),
     "/admin/news/add": () => print(AdminNewsAddPage),
+    "/signin": () => print(Signin),
+    "/signup": () => print(Signup)
 });
 router.resolve();
 
