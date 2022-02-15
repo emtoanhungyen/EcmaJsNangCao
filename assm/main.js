@@ -1,4 +1,5 @@
 import Navigo from "navigo";
+import add from "./pages/admin/add";
 import dashboard from "./pages/admin/dashboard";
 import home from "./pages/home";
 import signin from "./pages/signin";
@@ -14,6 +15,7 @@ const print = async (content, id) => {
 router.on({
     "/": () => print(home),
     "/admin/dashboard": () => print(dashboard),
+    "/admin/add": () => print(add),
     "/signin": () => print(signin),
     "/signup": () => print(signup),
 });
