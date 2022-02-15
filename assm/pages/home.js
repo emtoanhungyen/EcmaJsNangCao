@@ -3,13 +3,13 @@ import footer from "../components/footer";
 import header from "../components/header";
 
 const home = {
-    render() {
+    async render() {
         return /* html */`
             <div>
                 ${header.render()}
             </div>
             <div>
-                ${content.render()}
+                ${await content.render()}
             </div>
             <div>
                 ${footer.render()}
