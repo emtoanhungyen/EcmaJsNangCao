@@ -1,9 +1,9 @@
-import axios from "axios";
+import { getAll } from "../../api/admin";
 import navAdmin from "./navAdmin";
 
 const dashboard = {
     async render() {
-        const response = await axios.get('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm');    
+        const response = await getAll();    
         return /* html */`
             <div class="min-h-full">
                 <div>
@@ -57,6 +57,7 @@ const dashboard = {
                                                 <td>${post.name}</td>
                                                 <td>${post.desc}</td>
                                                 <td>
+                                                    <a href="/#/admin/${post.id}/edit/" class="bg-blue-500 text-white inline-block py-3 px-5">Edit</a>
                                                     <button data-id="${post.id}" id="btn" class="btn bg-red-500 text-white inline-block py-3 px-5 rounded">Delete</button>
                                                 </td>
                                             </tr>
@@ -77,7 +78,7 @@ const dashboard = {
                 const id = btn.dataset.id;
                 btn.addEventListener('click', function(){
                     const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
-                    axios.delete('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/${id}');
+                    axios.delete(`https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/${id}`);
                 })  
         });
     }

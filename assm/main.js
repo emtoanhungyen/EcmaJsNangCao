@@ -1,6 +1,7 @@
 import Navigo from "navigo";
 import add from "./pages/admin/add";
 import dashboard from "./pages/admin/dashboard";
+import edit from "./pages/admin/edit";
 import home from "./pages/home";
 import signin from "./pages/signin";
 import signup from "./pages/signup";
@@ -16,6 +17,7 @@ router.on({
     "/": () => print(home),
     "/admin/dashboard": () => print(dashboard),
     "/admin/add": () => print(add),
+    "/admin/:id/edit": () => print(edit),
     "/signin": () => print(signin),
     "/signup": () => print(signup),
 });
