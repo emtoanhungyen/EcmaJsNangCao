@@ -1,14 +1,18 @@
+import axios from "axios";
+
 const add = {
-    render() {
+    async render() {
+        const response = await axios.get('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm');
         return /* html */ `
         <div>
         <div class="md:grid md:grid-cols-3 md:gap-6">
             <div class="mt-5 md:mt-0 md:col-span-4">
-                <form action="#" method="POST">
+                <form action="#" method="POST" id="add">
                 <div class="shadow sm:rounded-md sm:overflow-hidden">
                     <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                     <div class="grid grid-cols-3 gap-6">
                         <label class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" class="border border-black" id="addName">
                     </div>
         
                     <div>
@@ -39,7 +43,7 @@ const add = {
                     </div>
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add</button>
+                    <button type="submit" class="btn inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add</button>
                     </div>
                 </div>
                 </form>
@@ -48,5 +52,8 @@ const add = {
         </div>
         `;
     },
+    afterRender(){
+        
+    }
 };
 export default add;
