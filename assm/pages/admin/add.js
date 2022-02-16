@@ -16,15 +16,14 @@ const add = {
                     </div>
         
                     <div>
-                        <label for="about" class="block text-sm font-medium text-gray-700"> About </label>
+                        <label for="about" class="block text-sm font-medium text-gray-700"> Desc </label>
                         <div class="mt-1">
-                        <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="you@example.com"></textarea>
+                            <textarea id="desc" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Description"></textarea>
                         </div>
-                        <p class="mt-2 text-sm text-gray-500">Brief description for your profile. URLs are hyperlinked.</p>
                     </div>
         
                     <div>
-                        <label class="block text-sm font-medium text-gray-700"> Avatar </label>
+                        <label class="block text-sm font-medium text-gray-700"> Image </label>
                         <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                         <div class="space-y-1 text-center">
                             <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
@@ -33,7 +32,7 @@ const add = {
                             <div class="flex text-sm text-gray-600">
                             <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                 <span>Upload a file</span>
-                                <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                                <input id="addimg" name="file-upload" type="file" class="sr-only">
                             </label>
                             <p class="pl-1">or drag and drop</p>
                             </div>
@@ -53,7 +52,11 @@ const add = {
         `;
     },
     afterRender(){
-        
+        const formAdd = document.querySelector('#add');
+        formAdd.addEventListener('submit', function(e){
+            e.preventDefault();
+            console.log('1'); 
+        });
     }
 };
 export default add;

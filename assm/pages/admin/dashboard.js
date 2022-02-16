@@ -74,11 +74,11 @@ const dashboard = {
     afterRender(){
         const btns = document.querySelectorAll('#btn');
             btns.forEach(btn => {
-            const id = btn.dataset.id;
-            btn.addEventListener('click', function(){
-                const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
-                axios.delete('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/${id}');
-            })  
+                const id = btn.dataset.id;
+                btn.addEventListener('click', function(){
+                    const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
+                    axios.delete('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/${id}');
+                })  
         });
     }
 };
