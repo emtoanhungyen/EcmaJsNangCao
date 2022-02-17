@@ -1,3 +1,5 @@
+import { dangky } from "../api/user";
+
 const signup = {
   render() {
     return /* html */ `
@@ -40,7 +42,7 @@ const signup = {
     const formSignup = document.querySelector('#formSignup');
     formSignup.addEventListener('submit', (e) => {
       e.preventDefault();
-      signup({
+      dangky({
         email: document.querySelector('#email').value,
         password: document.querySelector('#password').value,
       })

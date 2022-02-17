@@ -1,6 +1,6 @@
 import instance from "./config";
 
-export const signup = (user) => {
+export const dangky = (user) => {
     const url = `/signup`;
     return instance.post(url, user);
 };
