@@ -1,8 +1,10 @@
 import axios from "axios";
+import { get } from "../../api/admin";
+
 
 const edit = {
-    async render() {
-        const { data } = await axios.get('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/3');
+    async render(id) {
+        const { data } = await get(id) ;
         return /* html */ `
         <div>
         <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -43,7 +45,7 @@ const edit = {
                     <button type="submit" class="btn inline-flex justify-center py-2 px-4 
                         border border-transparent shadow-sm text-sm font-medium rounded-md text-white 
                         bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Add</button>
+                            Save</button>
                     </div>
                 </div>
                 </form>
@@ -52,7 +54,7 @@ const edit = {
         </div>
         `;
     },
-    afterRender(){
+    afterRender(id){
         const formAdd = document.querySelector('#add');
         const CLOUDINARY_PRESET = "v7xao77w";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dd0io3fh2/image/upload";
@@ -73,11 +75,14 @@ const edit = {
                 }
             });
             //call API thêm bài viết
-            axios.post('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm', {
-                name: document.querySelector('#addname').value,
-                img: data.url,
-                desc: document.querySelector('#addDesc').value
-            });
+            edit(
+                {
+                    id: id,
+                    name: document.querySelector('#addname').value,
+                    img: data.url,
+                    desc: document.querySelector('#addDesc').value
+                }
+            )
         });
     }
 };

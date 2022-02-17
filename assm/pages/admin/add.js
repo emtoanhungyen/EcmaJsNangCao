@@ -1,4 +1,5 @@
 import { getAll } from "../../api/admin";
+import axios from "axios";
 
 const add = {
     async render() {
@@ -73,11 +74,13 @@ const add = {
                 }
             });
             //call API thêm bài viết
-            axios.post('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm', {
-                name: document.querySelector('#addname').value,
-                img: data.url,
-                desc: document.querySelector('#addDesc').value
-            });
+            add(
+                {
+                    name: document.querySelector('#addName').value,
+                    img: data.url,
+                    desc: document.querySelector('#addDesc').value
+                }
+            )
         });
     }
 };

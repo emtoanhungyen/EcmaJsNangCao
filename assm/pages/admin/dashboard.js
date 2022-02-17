@@ -1,5 +1,7 @@
-import { getAll } from "../../api/admin";
+import { getAll, remove } from "../../api/admin";
 import navAdmin from "./navAdmin";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const dashboard = {
     async render() {
@@ -78,7 +80,11 @@ const dashboard = {
                 const id = btn.dataset.id;
                 btn.addEventListener('click', function(){
                     const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
-                    axios.delete(`https://61e7a9a8e32cd90017acbc17.mockapi.io/asm/${id}`);
+                    if(confirm){
+                        remove(id).then(() =>{
+                            toastr.success("Ban da xoa thanh cong!");
+                        })
+                    }
                 })  
         });
     }

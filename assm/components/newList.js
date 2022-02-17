@@ -1,8 +1,8 @@
-import axios from "axios";
+import { getAll } from "../api/admin";
 
 const newList = {
     async render() {
-        const response = await axios.get('https://61e7a9a8e32cd90017acbc17.mockapi.io/asm');
+        const response = await getAll();
 
         return /* html */ `
         <section class="content">

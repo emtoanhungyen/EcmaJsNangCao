@@ -17,7 +17,7 @@ router.on({
     "/": () => print(home),
     "/admin/dashboard": () => print(dashboard),
     "/admin/add": () => print(add),
-    "/admin/:id/edit": () => print(edit),
+    "/admin/:id/edit": ({ data }) => print(edit, data.id),
     "/signin": () => print(signin),
     "/signup": () => print(signup),
 });
