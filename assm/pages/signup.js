@@ -39,13 +39,14 @@ const signup = {
         `
   },
   afterRender() {
-    const formSignup = document.querySelector('#formSignup');
-    formSignup.addEventListener('submit', (e) => {
+    const formSignup = document.querySelector("#formSignup");
+    formSignup.addEventListener("submit", async (e) => {
       e.preventDefault();
-      dangky({
-        email: document.querySelector('#email').value,
-        password: document.querySelector('#password').value,
-      })
+      const { data } = await dangky({
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
+      });
+      console.log(data);
     })
   }
 };
