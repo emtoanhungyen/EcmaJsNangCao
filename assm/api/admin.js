@@ -1,22 +1,22 @@
 import instance from "./config";
 
 export const getAll = () => {
-    const url = '/asm';
+    const url = '/asms';
     return instance.get(url);
 }
 export const get = (id) => {
-    const url = `/asm/${id}`;
+    const url = `/asms/${id}`;
     return instance.get(url);
 }
 export const remove = (id) => {
-    const url = `/asm/${id}`;
+    const url = `/asms/${id}`;
     return instance.delete(url);
 }
-export const add = (asm) => {
-    const url = "/asm";
-    return instance.post(url, asm);
+export const add = (post) => {
+    const url = `/asms`;
+    return instance.post(url, post);
 }
-export const edit = (asm) => {
-    const url = `/asm/${asm.id}`;
-    return instance.put(url, asm);
+export const edit = (post) => {
+    const url = `/asms/${post.id}`;
+    return instance.put(url, post);
 }

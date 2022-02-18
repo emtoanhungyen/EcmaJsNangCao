@@ -1,7 +1,9 @@
 import { dangky } from "../api/user";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 const signup = {
-  render() {
+  async render() {
     return /* html */ `
         <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
           <div class="max-w-md w-full space-y-8">
@@ -42,11 +44,22 @@ const signup = {
     const formSignup = document.querySelector("#formSignup");
     formSignup.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const { data } = await dangky({
-        email: document.querySelector("#email").value,
-        password: document.querySelector("#password").value,
-      });
-      console.log(data);
+      try {
+        const { data } = await dangky({
+          email: document.querySelector("#email").value,
+          password: document.querySelector("#password").value,
+          
+        });
+        toastr.success("Bạn đã đăng ký thành công!");
+        if (data) {
+          setTimeout(() => {
+            document.location.href = "/signin";
+          }, 2000)
+        }
+      } catch (error) {
+        toastr.error("Đăng ký không thành công!");
+        console.log(error);
+      }
     })
   }
 };

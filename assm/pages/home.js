@@ -16,5 +16,8 @@ const home = {
             </div>
         `;
     },
+    afterRender(){
+        header.afterRender();
+    }
 };
 export default home;

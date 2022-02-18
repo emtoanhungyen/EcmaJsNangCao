@@ -13,15 +13,19 @@ const header = {
                     <li><a href="#">DỊCH VỤ</a></li>
                     <li><a href="/signup/">ĐĂNG KÝ</a></li>
                     <li><a href="/signin/">ĐĂNG NHẬP</a></li>
+                    <li>Xin chào: <a href="" id="email"></a></li>
+
                 </ul>
-            </div>
-            <div class="search">
-                <form action="">
-                    <button type="button">ĐĂNG KÍ LÁI THỬ</button>
-                </form>
             </div>
         </nav>
         `;
     },
+    afterRender(){
+        console.log();
+        const email = document.querySelector('#email');
+        if (email) {
+            email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
+        }
+    }
 };
 export default header;

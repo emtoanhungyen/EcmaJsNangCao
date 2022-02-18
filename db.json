@@ -1,5 +1,5 @@
 {
-  "asm": [
+  "asms": [
     {
       "name": "Tammy Waelchi",
       "img": "http://placeimg.com/640/480/people",
@@ -19,5 +19,36 @@
       "id": "3"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$yAFeE.nDlZsEeucP0yNbg.46bA3L4DQs6Br2ucn/zhCH3mHCn6Exm",
+      "id": 1
+    },
+    {
+      "email": "nun@gmail.com",
+      "password": "$2a$10$DWDPV5EFgzY7efyWqzrSx.bc1.93t8GHFW4GBAKuLbBZzassniigm",
+      "id": 2
+    },
+    {
+      "email": "dangnhap@gmail.com",
+      "password": "$2a$10$BTGIiMoP6ZgpcJBpT8/DreNAAGgEaBHlflyiZtFqctgVevcstYsmK",
+      "id": 3
+    },
+    {
+      "email": "phongu@gmail.com",
+      "password": "$2a$10$O9xgztuIo2aidTprhmzcNOlRTk9cY3tHbWpdpRhmZ/9e6gt14BCxm",
+      "id": 4
+    },
+    {
+      "email": "hieungu@gmail.com",
+      "password": "$2a$10$8JaH.PFty2sknwU40DHDm.nhj3rSHWWZR38b4lNlGClGUxpD7/g9O",
+      "id": 5
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$hT3PikVr.rwukApLcrqXO.eGY8pJWbhNdky8z5Z2YpEga71X/Opi.",
+      "id": 6
+    }
+  ]
 }
