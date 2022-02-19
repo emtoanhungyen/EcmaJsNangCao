@@ -1,3 +1,5 @@
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 import Navigo from "navigo";
 import add from "./pages/admin/add";
 import dashboard from "./pages/admin/dashboard";
@@ -13,6 +15,24 @@ const print = async (content, id) => {
     document.getElementById("app").innerHTML = await content.render(id);
     if(content.afterRender) await content.afterRender(id);
 };
+
+router.on("/admin/*", () => {}, {
+    before: (done) =>{
+        if (localStorage.getItem('user')) {
+            const userId = JSON.parse(localStorage.getItem('user')).id;
+            if (userId === 7) {
+                done();
+            } else {
+                toastr.success("Bạn không phải là admin");
+                setTimeout(() => {
+                    document.location.href = "/";
+                },500);
+                
+            }
+        }
+    }
+})
+
 router.on({
     "/": () => print(home),
     "/admin/dashboard": () => print(dashboard),

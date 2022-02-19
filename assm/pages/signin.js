@@ -65,7 +65,7 @@ const signin = {
             toastr.success("Đăng nhập thành công rồi máaaaaaaa");
             setTimeout(() => {
               document.location.href = "/";
-            }, 2000);
+            }, 1500);
           }
         } catch (error) {
           toastr.error("Đăng nhập không thành công!");

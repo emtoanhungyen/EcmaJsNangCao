@@ -21,11 +21,6 @@
   ],
   "users": [
     {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$yAFeE.nDlZsEeucP0yNbg.46bA3L4DQs6Br2ucn/zhCH3mHCn6Exm",
-      "id": 1
-    },
-    {
       "email": "nun@gmail.com",
       "password": "$2a$10$DWDPV5EFgzY7efyWqzrSx.bc1.93t8GHFW4GBAKuLbBZzassniigm",
       "id": 2
@@ -49,6 +44,11 @@
       "email": "a@gmail.com",
       "password": "$2a$10$hT3PikVr.rwukApLcrqXO.eGY8pJWbhNdky8z5Z2YpEga71X/Opi.",
       "id": 6
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$cKZbzV4j77DKJ1hGlSY6uuQmAYBFvOCUAPt/RamuLrh34hjErZ9Ii",
+      "id": 7
     }
   ]
 }

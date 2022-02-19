@@ -5,7 +5,7 @@ import header from "../components/header";
 const home = {
     async render() {
         return /* html */`
-            <div>
+            <div id="header">
                 ${header.render()}
             </div>
             <div>
