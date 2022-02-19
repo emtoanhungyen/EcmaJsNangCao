@@ -36,7 +36,7 @@ router.on("/admin/*", () => {}, {
 router.on({
     "/": () => print(home),
     "/admin/dashboard": () => print(dashboard),
-    "/admin/add": () => print(add),
+    "/admin/dashboard/add": () => print(add),
     "/admin/:id/edit": ({ data }) => print(edit, data.id),
     "/signin": () => print(signin),
     "/signup": () => print(signup),

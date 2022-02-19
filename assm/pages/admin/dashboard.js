@@ -33,7 +33,7 @@ const dashboard = {
                                             <th>Desc</th>
                                             <th>
                                                 <div class="mt-4 flex lg:mt-0 lg:ml-4">
-                                                    <a href="/admin/add/" class="sm:ml-3">
+                                                    <a href="/admin/dashboard/add/" class="sm:ml-3">
                                                         <button
                                                             type="button"
                                                             class="inline-flex items-center px-2 py-1  border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
