@@ -7,6 +7,7 @@ import edit from "./pages/admin/edit";
 import home from "./pages/home";
 import signin from "./pages/signin";
 import signup from "./pages/signup";
+import newList from "./components/newList";
 
 const router = new Navigo("/", {linksSelector: "a", hash: true});
 
@@ -27,7 +28,6 @@ router.on("/admin/*", () => {}, {
                 setTimeout(() => {
                     document.location.href = "/";
                 },500);
-                
             }
         }
     }
@@ -35,6 +35,7 @@ router.on("/admin/*", () => {}, {
 
 router.on({
     "/": () => print(home),
+    "/newList": () => print(newList),
     "/admin/dashboard": () => print(dashboard),
     "/admin/dashboard/add": () => print(add),
     "/admin/:id/edit": ({ data }) => print(edit, data.id),

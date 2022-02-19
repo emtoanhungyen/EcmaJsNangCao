@@ -5,28 +5,61 @@ import "toastr/build/toastr.min.css";
 const header = {
     render() {
         return /* html */`
-        <nav>
-            <div class="logo">
-                <a href="#"><img src="https://res.cloudinary.com/dd0io3fh2/image/upload/v1644766803/img_ecma_js/logo_a99f29.png" alt="logo"></a>
+        <div class="header">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="#"><img src="https://res.cloudinary.com/dd0io3fh2/image/upload/v1645286901/Logo_rbcynk.png"></a>
+
+                    <!-- Mobile button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Web Design</a></li>
+                                <li><a class="dropdown-item" href="#">Brand Identity Design</a></li>
+                                <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
+                                <div class="dropdown-item">
+                                <input type="text" name="search" class="form-control" placeholder="Search...">
+                                <a href="#" class="btn btn-secondary p-2 my-1">Search</a>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- FORM -->
+                    <a href="#" class="btn btn-primary">Contract Us</a>
+                </div>
             </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#">Ô TÔ</a></li>
-                    <li><a href="#">XE MÁY ĐIỆN</a></li>
-                    <li><a href="#">ƯU ĐÃI</a></li>
-                    <li><a href="#">DỊCH VỤ</a></li>
-                    
-                    ${localStorage.getItem('user') ? `
-                        <li><a href="/admin/dashboard">Dashboard</li>                    
-                        <li>Xin chào: <a href="" id="email"></a></li>
-                        <li><a id="logout">Đăng xuất</a></li>
-                    `: `
-                        <li><a href="/signup/">ĐĂNG KÝ</a></li>
-                        <li><a href="/signin/">ĐĂNG NHẬP</a></li>
-                    `}
-                </ul>
-            </div>
-        </nav>
+        </nav>   
+    </div>
         `;
     },
     afterRender(){

@@ -1,24 +1,6 @@
 {
   "asms": [
     {
-      "name": "Tammy Waelchi",
-      "img": "http://placeimg.com/640/480/people",
-      "desc": "Quis sapiente et earum voluptatibus sit culpa sit voluptas. Ea quam eum nostrum dicta modi ut aliquid qui. Porro quas voluptatem dolores. Quia sed consequuntur est quis a est optio dolores. Voluptatibus quia perferendis qui deserunt asperiores asperiores laudantium voluptatum fugiat. Non autem eveniet ea.",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "name": "Mr. Lucia Waelchi híhis",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645264154/nkyk9hyosqh7cairkkjh.jpg",
-      "desc": "Eos nisi qui quisquam qui qui.s"
-    },
-    {
-      "name": "demo them sp",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645260528/qxsj0urs4vb8xxat056x.jpg",
-      "desc": "qq",
-      "id": "QyPqzp0"
-    },
-    {
       "id": "qHYqVL-",
       "name": "sua san pham 1hihi",
       "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645264248/jjy28xvigzd5uwdwatxk.png",
@@ -62,5 +44,6 @@
       "password": "$2a$10$cKZbzV4j77DKJ1hGlSY6uuQmAYBFvOCUAPt/RamuLrh34hjErZ9Ii",
       "id": 7
     }
-  ]
+  ],
+  "products": []
 }
