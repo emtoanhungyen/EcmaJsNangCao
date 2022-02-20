@@ -192,7 +192,7 @@ h4 {
 /*SHOWCASE*/
 
 .showcase {
-	background: url(../img/showcase-bg.jpg) center center no-repeat;
+	background: url(https://res.cloudinary.com/dd0io3fh2/image/upload/v1645346654/showcase-bg_pyi8wo.jpg) center center no-repeat;
 	background-size: cover;
 }
 .showcase h1 {

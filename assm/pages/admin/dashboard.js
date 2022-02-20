@@ -1,12 +1,12 @@
+import toastr from "toastr";
 import { getAll, remove } from "../../api/admin";
 import navAdmin from "./navAdmin";
-import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 import { reRender } from "../../utils";
 
 const dashboard = {
     async render() {
-        const response = await getAll();    
+        const response = await getAll();
         return /* html */`
             <div class="min-h-full">
                 <div>
@@ -76,21 +76,21 @@ const dashboard = {
             </div>
             `;
     },
-    afterRender(){
-        const btns = document.querySelectorAll('#btn');
-            btns.forEach(btn => {
-                const id = btn.dataset.id;
-                btn.addEventListener('click', function(){
-                    const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
-                    if(confirm){
-                        remove(id).then(() =>{
-                            toastr.success("Ban da xoa thanh cong!");
-                            reRender(dashboard,'#dashboard');
-                        })
-                    }
-                })  
+    afterRender() {
+        const btns = document.querySelectorAll("#btn");
+        btns.forEach((btn) => {
+            const { id } = btn.dataset;
+            btn.addEventListener("click", () => {
+                const confirm = window.confirm("Bạn có chắc chắn muốn xóa?");
+                if (confirm) {
+                    remove(id).then(() => {
+                        toastr.success("Ban da xoa thanh cong!");
+                        reRender(dashboard, "#dashboard");
+                    });
+                }
+            });
         });
         navAdmin.afterRender();
-    }
+    },
 };
 export default dashboard;

@@ -9,29 +9,29 @@ import signin from "./pages/signin";
 import signup from "./pages/signup";
 import newList from "./components/newList";
 
-const router = new Navigo("/", {linksSelector: "a", hash: true});
+const router = new Navigo("/", { linksSelector: "a", hash: true });
 
 const print = async (content, id) => {
     // DetailNewsPage.render(id).render();
     document.getElementById("app").innerHTML = await content.render(id);
-    if(content.afterRender) await content.afterRender(id);
+    if (content.afterRender) await content.afterRender(id);
 };
 
 router.on("/admin/*", () => {}, {
-    before: (done) =>{
-        if (localStorage.getItem('user')) {
-            const userId = JSON.parse(localStorage.getItem('user')).id;
+    before: (done) => {
+        if (localStorage.getItem("user")) {
+            const userId = JSON.parse(localStorage.getItem("user")).id;
             if (userId === 7) {
                 done();
             } else {
                 toastr.success("Bạn không phải là admin");
                 setTimeout(() => {
                     document.location.href = "/";
-                },500);
+                }, 500);
             }
         }
-    }
-})
+    },
+});
 
 router.on({
     "/": () => print(home),

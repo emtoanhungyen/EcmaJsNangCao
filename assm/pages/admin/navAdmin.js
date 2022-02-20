@@ -1,3 +1,6 @@
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
 const navAdmin = {
     render() {
         return /* html */`
@@ -7,7 +10,7 @@ const navAdmin = {
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
                                 <a href="/">
-                                    <img class="h-8 w-8" src="https://res.cloudinary.com/dd0io3fh2/image/upload/v1645024770/jgv8xksethqrpveljqtr.png"
+                                    <img class="h-8 w-8" src="https://res.cloudinary.com/dd0io3fh2/image/upload/v1645351972/icon_saisyu.png"
                                         alt="Workflow">
                                 </a>
                             </div>
@@ -33,12 +36,12 @@ const navAdmin = {
                         </div>
                         <div class="hidden md:block">
                             <div class="ml-4 flex items-center md:ml-6">
-                                ${localStorage.getItem('user') ? `
+                                ${localStorage.getItem("user") ? `
                                     <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
                                     id="email"></a>
                                     <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
                                     id="logout">Logout</a>
-                                `: ""}
+                                ` : ""}
                             
                             </div>
                         </div>
@@ -47,21 +50,21 @@ const navAdmin = {
             </nav>
         `;
     },
-    afterRender(){
-        const email = document.querySelector('#email');
-        const logout = document.querySelector('#logout');
+    afterRender() {
+        const email = document.querySelector("#email");
+        const logout = document.querySelector("#logout");
         if (email) {
-            email.innerHTML = JSON.parse(localStorage.getItem('user')).email;
+            email.innerHTML = JSON.parse(localStorage.getItem("user")).email;
         }
         if (logout) {
-            logout.addEventListener('click', function(){
-                localStorage.removeItem('user');
-                toastr.success("Đăng xuất thành công, bai bai!")
+            logout.addEventListener("click", () => {
+                localStorage.removeItem("user");
+                toastr.success("Đăng xuất thành công, bai bai!");
                 setTimeout(() => {
                     document.location.href = "/";
-                },1000);
-            })
-        };
-    }
+                }, 1000);
+            });
+        }
+    },
 };
 export default navAdmin;
