@@ -8,6 +8,8 @@ import home from "./pages/home";
 import signin from "./pages/signin";
 import signup from "./pages/signup";
 import newList from "./components/newList";
+import allNews from "./components/allNews";
+import detailNews from "./pages/detailNews";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -41,6 +43,8 @@ router.on({
     "/admin/:id/edit": ({ data }) => print(edit, data.id),
     "/signin": () => print(signin),
     "/signup": () => print(signup),
+    "/allNews": () => print(allNews),
+    "/newList/:id": ({ data }) => print(detailNews, data.id),
 });
 
 router.resolve();

@@ -20,8 +20,8 @@ const newList = {
                                 <div class="row gy-4">
                                 ${response.data.map((post) => `
                                     <div class="col-md-4">
-                                        <a href="#">
-                                            <img src="${post.img}" class="img-fluid max-w-[300px]">
+                                        <a href="/#/newList/${post.id}">
+                                            <img src="${post.img}" class="max-w-[450px] max-h-[200px]">
                                         </a>
                                         <h4 class="my-2">
                                             <a href="#">${post.name}</a>
@@ -34,16 +34,6 @@ const newList = {
                                 </div>
                             </div>
                         </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#blogSlider" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#blogSlider" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-
                     </div>
                 </div>
             </div>
