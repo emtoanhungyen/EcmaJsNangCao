@@ -1,4 +1,3 @@
-import toastr from "toastr";
 import "toastr/build/toastr.min.css";
 
 const navAdmin = {
@@ -18,10 +17,10 @@ const navAdmin = {
                                 <div class="ml-10 flex items-baseline space-x-4">
                                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                     <a href="/admin/dashboard" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                                        aria-current="page">Danh sách sản phẩm</a>
+                                        aria-current="page">Bài viết</a>
 
-                                    <a href="#"
-                                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
+                                    <a href="/admin/listProducts"
+                                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Sản phẩm</a>
 
                                     <a href="#"
                                         class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
@@ -34,37 +33,11 @@ const navAdmin = {
                                 </div>
                             </div>
                         </div>
-                        <div class="hidden md:block">
-                            <div class="ml-4 flex items-center md:ml-6">
-                                ${localStorage.getItem("user") ? `
-                                    <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
-                                    id="email"></a>
-                                    <a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
-                                    id="logout">Logout</a>
-                                ` : ""}
-                            
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </nav>
         `;
-    },
-    afterRender() {
-        const email = document.querySelector("#email");
-        const logout = document.querySelector("#logout");
-        if (email) {
-            email.innerHTML = JSON.parse(localStorage.getItem("user")).email;
-        }
-        if (logout) {
-            logout.addEventListener("click", () => {
-                localStorage.removeItem("user");
-                toastr.success("Đăng xuất thành công, bai bai!");
-                setTimeout(() => {
-                    document.location.href = "/";
-                }, 1000);
-            });
-        }
     },
 };
 export default navAdmin;

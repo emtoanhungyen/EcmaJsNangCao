@@ -1,12 +1,11 @@
 import axios from "axios";
-import { getAll, them } from "../../api/admin";
-import navAdmin from "./navAdmin";
 import toastr from "toastr";
+import { them } from "../../api/admin";
+import navAdmin from "./navAdmin";
 import "toastr/build/toastr.min.css";
 
 const add = {
     async render() {
-        const response = await getAll();
         return /* html */ `
             <div>
                 ${navAdmin.render()}
@@ -61,38 +60,37 @@ const add = {
             </div>
         `;
     },
-    afterRender(){
-        const formAdd = document.querySelector('#add-form-asm');
+    afterRender() {
+        const formAdd = document.querySelector("#add-form-asm");
         const CLOUDINARY_PRESET = "v7xao77w";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/dd0io3fh2/image/upload";
 
-        formAdd.addEventListener('submit', async function(e) {
+        formAdd.addEventListener("submit", async (e) => {
             e.preventDefault();
             try {
-                const file = document.querySelector('#add-img').files[0];
+                const file = document.querySelector("#add-img").files[0];
                 const formData = new FormData();
-                formData.append('file', file);
-                formData.append('upload_preset', CLOUDINARY_PRESET);
+                formData.append("file", file);
+                formData.append("upload_preset", CLOUDINARY_PRESET);
 
-                const {data} = await axios.post(CLOUDINARY_API_URL,formData, {
-                    headers:{
-                        "Content-Type": "application/form-data"
-                    }
+                const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                    headers: {
+                        "Content-Type": "application/form-data",
+                    },
                 });
                 them({
-                    name: document.querySelector('#add-name').value,
+                    name: document.querySelector("#add-name").value,
                     img: data.url,
-                    desc: document.querySelector('#add-desc').value,
-                })
+                    desc: document.querySelector("#add-desc").value,
+                });
                 toastr.success("Bạn đã thêm thành công");
                 setTimeout(() => {
-                    document.location.href = "/admin/dashboard"
-                },1000)
+                    document.location.href = "/admin/dashboard";
+                }, 1000);
             } catch (error) {
                 toastr.error("Thêm thất bại");
             }
-            
-        })
-    }
+        });
+    },
 };
 export default add;

@@ -1,4 +1,5 @@
 import newList from "./newList";
+import productList from "./productList";
 
 const content = {
     async render() {
@@ -6,6 +7,9 @@ const content = {
         <main>
             <div>
                 ${await newList.render()}
+            </div>
+            <div>
+                ${await productList.render()}
             </div>
         </main>
         `;

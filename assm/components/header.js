@@ -23,10 +23,10 @@ const header = {
                                 <a class="nav-link active" aria-current="page" href="/">Trang chủ</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/allNews">Danh sách bài viết</a>
+                                <a class="nav-link" href="/allNews">Bài Viết</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
+                                <a class="nav-link" href="/products">Sản Phẩm</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

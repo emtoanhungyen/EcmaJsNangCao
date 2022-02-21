@@ -10,6 +10,9 @@ import signup from "./pages/signup";
 import newList from "./components/newList";
 import allNews from "./components/allNews";
 import detailNews from "./pages/detailNews";
+import listProducts from "./pages/admin/listProducts";
+import addProducts from "./pages/admin/addProducts";
+import products from "./pages/products/products";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -39,11 +42,14 @@ router.on({
     "/": () => print(home),
     "/newList": () => print(newList),
     "/admin/dashboard": () => print(dashboard),
+    "/admin/listProducts": () => print(listProducts),
+    "/admin/listProducts/add": () => print(addProducts),
     "/admin/dashboard/add": () => print(add),
     "/admin/:id/edit": ({ data }) => print(edit, data.id),
     "/signin": () => print(signin),
     "/signup": () => print(signup),
     "/allNews": () => print(allNews),
+    "/products": () => print(products),
     "/newList/:id": ({ data }) => print(detailNews, data.id),
 });
 
