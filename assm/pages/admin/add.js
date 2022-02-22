@@ -20,7 +20,7 @@ const add = {
                                 <label class="block text-sm font-medium text-gray-700">Name</label>
                                 <input 
                                 class="border border-gray-300 rounded-md w-full h-[35px]"
-                                type="text" class="border border-black" id="add-name">
+                                type="text" class="border border-black" id="add-name" name="add-name">
                             </div>
                 
                             <div>
@@ -83,7 +83,7 @@ const add = {
                     img: data.url,
                     desc: document.querySelector("#add-desc").value,
                 });
-                toastr.success("Bạn đã thêm thành công");
+                toastr.success("Thêm thành công");
                 setTimeout(() => {
                     document.location.href = "/admin/dashboard";
                 }, 1000);

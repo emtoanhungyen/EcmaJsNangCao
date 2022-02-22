@@ -34,9 +34,8 @@ const detailNews = {
                                                 <a href="">${post.name}</a>
                                             </h4>
                                             <p>${post.desc}</p>
-                                            <a href="#">Read More</a>
-                                        </div>
-                                    
+                                            <button data-id="${post.id}" id="btnaddtocart">add to cart</button>
+                                            </div>
                                 </div>
                             </div>
                         </div>
@@ -47,6 +46,13 @@ const detailNews = {
                 ${footer.render()}
             </div>
         `;
+    },
+    afterRender() {
+        const btnaddtocart = document.querySelector("#btnaddtocart");
+        const m = btnaddtocart.dataset.id;
+        btnaddtocart.addEventListener("click", () => {
+            console.log("1");
+        });
     },
 };
 export default detailNews;
