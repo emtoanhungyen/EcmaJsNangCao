@@ -1,6 +1,6 @@
-import header from "./header";
-import footer from "./footer";
-import { getAll } from "../api/admin";
+import { getAll } from "../../api/admin";
+import footer from "../../components/footer";
+import header from "../../components/header";
 
 const allNews = {
     async render() {

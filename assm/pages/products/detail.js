@@ -1,10 +1,10 @@
 import header from "../../components/header";
 import footer from "../../components/footer";
-import { getAll } from "../../api/products";
+import { get } from "../../api/products";
 
-const products = {
-    async render() {
-        const response = await getAll();
+const productDetail = {
+    async render(id) {
+        const { data: post } = await get(id);
         return /* html */`
             <div id="header">
                 ${header.render()}
@@ -23,7 +23,7 @@ const products = {
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row gy-4">
-                                    ${response.data.map((post) => `
+                                   
                                         <div class="col-md-4">
                                             <a href="#">
                                                 <img src="${post.img}" class="max-w-[450px] max-h-[200px]">
@@ -32,13 +32,13 @@ const products = {
                                                 <a href="#">${post.price}</a>
                                             </h4>
                                             <h4 class="my-2">
-                                                <a href="#">${post.name}</a>
+                                                <a href="">${post.name}</a>
                                             </h4>
                                             <div class="date small text-muted mb-2">14/10/2020 - Admin</div>
                                             <p>${post.desc}</p>
                                             <a href="#">Read More</a>
                                         </div>
-                                    `).join("")}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -51,4 +51,4 @@ const products = {
         `;
     },
 };
-export default products;
+export default productDetail;

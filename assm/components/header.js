@@ -28,20 +28,6 @@ const header = {
                             <li class="nav-item">
                                 <a class="nav-link" href="/products">Sản Phẩm</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Services
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Web Design</a></li>
-                                    <li><a class="dropdown-item" href="#">Brand Identity Design</a></li>
-                                    <li><a class="dropdown-item" href="#">Digital Marketing</a></li>
-                                    <div class="dropdown-item">
-                                    <input type="text" name="search" class="form-control" placeholder="Search...">
-                                    <a href="#" class="btn btn-secondary p-2 my-1">Search</a>
-                                    </div>
-                                </ul>
-                            </li>
                             ${localStorage.getItem("user") ? `
                                 <li class="nav-item">
                                     <a class="nav-link" id="email"></a>
@@ -57,10 +43,16 @@ const header = {
                                     <a href="/signin" class="nav-link">Đăng nhập</a>
                                 </li>
                             `}
-                            <li class="nav-item">
-                                <a class="nav-link">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-search"></i>
                                 </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <div class="dropdown-item">
+                                        <input type="text" name="search" class="form-control" placeholder="Search...">
+                                        <a href="#" class="btn btn-secondary p-2 my-1">Search</a>
+                                    </div>
+                                </ul>
                             </li>
                         </ul>
                         <!-- FORM -->

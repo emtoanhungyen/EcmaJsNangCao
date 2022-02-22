@@ -8,11 +8,12 @@ import home from "./pages/home";
 import signin from "./pages/signin";
 import signup from "./pages/signup";
 import newList from "./components/newList";
-import allNews from "./components/allNews";
-import detailNews from "./pages/detailNews";
 import listProducts from "./pages/admin/listProducts";
 import addProducts from "./pages/admin/addProducts";
-import products from "./pages/products/products";
+import products from "./pages/products";
+import productDetail from "./pages/products/detail";
+import detailNews from "./pages/news/detailNews";
+import allNews from "./pages/news";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -50,6 +51,7 @@ router.on({
     "/signup": () => print(signup),
     "/allNews": () => print(allNews),
     "/products": () => print(products),
+    "/products/:id": ({ data }) => print(productDetail, data.id),
     "/newList/:id": ({ data }) => print(detailNews, data.id),
 });
 

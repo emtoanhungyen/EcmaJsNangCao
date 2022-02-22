@@ -23,6 +23,7 @@
   "dependencies": {
     "axios": "^0.25.0",
     "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3",
     "navigo": "^8.11.1",
     "toastr": "^2.1.4",
     "validation": "^0.0.1"
