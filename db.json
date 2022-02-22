@@ -1,28 +1,10 @@
 {
   "asms": [
     {
-      "id": "qHYqVL-",
-      "name": "sua san pham 1hihi",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645264248/jjy28xvigzd5uwdwatxk.png",
-      "desc": "a"
-    },
-    {
       "name": "Bia heineken",
       "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645264508/wojned7pjd0ma0cgavfi.jpg",
       "desc": "Bia heineken đến từ Thường Tín",
       "id": "xl6Z0ao"
-    },
-    {
-      "name": "bai viet1",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645426334/hurgenr3sdwof54utizt.png",
-      "desc": "desc 1",
-      "id": "JZisxN8"
-    },
-    {
-      "name": "thuận ngu",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645453251/mcdutpwqyg5imbxn8rfq.jpg",
-      "desc": "hiếu  ngu",
-      "id": "EVEqyGX"
     }
   ],
   "products": [

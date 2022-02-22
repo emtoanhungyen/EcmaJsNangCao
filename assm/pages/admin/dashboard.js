@@ -2,17 +2,17 @@ import toastr from "toastr";
 import { getAll, remove } from "../../api/admin";
 import navAdmin from "./navAdmin";
 import "toastr/build/toastr.min.css";
-import { reRender } from "../../utils";
+import { reRender } from "../../utils/index";
 
 const dashboard = {
     async render() {
         const response = await getAll();
         return /* html */`
-            <div class="min-h-full">
+            <div class="min-h-full"  id="dashboard">
                 <div>
                     ${navAdmin.render()}
                 </div>
-                <div id="dashboard">
+                <div>
                     <header class="bg-white shadow">
                         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                             <h1 class="text-3xl font-bold text-gray-900">Danh sách bài viết</h1>

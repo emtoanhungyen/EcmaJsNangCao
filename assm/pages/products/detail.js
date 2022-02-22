@@ -14,7 +14,7 @@ const productDetail = {
                 <div class="container">
 
                     <div class="block-heading text-center">
-                        <h2 class="text-4xl">Danh sách sản phẩm</h2>
+                        <h2 class="text-4xl">Chi tiết sản phẩm</h2>
                         <div class="line"></div>
                     </div>
 
@@ -34,11 +34,9 @@ const productDetail = {
                                             <h4 class="my-2">
                                                 <a href="">${post.name}</a>
                                             </h4>
-                                            <div class="date small text-muted mb-2">14/10/2020 - Admin</div>
                                             <p>${post.desc}</p>
-                                            <a href="#">Read More</a>
+                                            <button data-id="${post.id}" id="btnAddToCart">Add to cart</button>
                                         </div>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -50,5 +48,6 @@ const productDetail = {
             </div>
         `;
     },
+
 };
 export default productDetail;

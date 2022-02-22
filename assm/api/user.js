@@ -1,10 +1,10 @@
 import instance from "./config";
 
 export const dangky = (user) => {
-    const url = `/signup`;
+    const url = "/signup";
     return instance.post(url, user);
 };
 export const dangnhap = (user) => {
-    const url = `/signin`;
+    const url = "/signin";
     return instance.post(url, user);
 };

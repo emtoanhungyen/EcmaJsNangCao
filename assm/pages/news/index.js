@@ -30,7 +30,7 @@ const allNews = {
                                                 <img src="${post.img}" class="max-w-[450px] max-h-[200px]">
                                             </a>
                                             <h4 class="my-2">
-                                                <a href="#">${post.name}</a>
+                                                <a href="/#/allNews/${post.id}">${post.name}</a>
                                             </h4>
                                             <div class="date small text-muted mb-2">14/10/2020 - Admin</div>
                                             <p>${post.desc}</p>

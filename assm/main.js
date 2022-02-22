@@ -13,7 +13,7 @@ import addProducts from "./pages/admin/addProducts";
 import products from "./pages/products";
 import productDetail from "./pages/products/detail";
 import detailNews from "./pages/news/detailNews";
-import allNews from "./pages/news";
+import allNews from "./pages/news/index";
 
 const router = new Navigo("/", { linksSelector: "a", hash: true });
 
@@ -52,7 +52,7 @@ router.on({
     "/allNews": () => print(allNews),
     "/products": () => print(products),
     "/products/:id": ({ data }) => print(productDetail, data.id),
-    "/newList/:id": ({ data }) => print(detailNews, data.id),
+    "/allNews/:id": ({ data }) => print(detailNews, data.id),
 });
 
 router.resolve();
