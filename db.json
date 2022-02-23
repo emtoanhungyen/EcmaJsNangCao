@@ -1,10 +1,10 @@
 {
   "asms": [
     {
-      "name": "Bia heineken",
-      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645264508/wojned7pjd0ma0cgavfi.jpg",
-      "desc": "Bia heineken đến từ Thường Tín",
-      "id": "xl6Z0ao"
+      "id": "xl6Z0ao",
+      "name": "Bia heineken updated",
+      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645592626/yvkv12nznkucykg0jtm1.jpg",
+      "desc": "Bia heineken đến từ Thường Tín updated"
     }
   ],
   "products": [
@@ -13,14 +13,34 @@
       "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645459720/bvjztlykr61fzv2ss6zo.jpg",
       "desc": "a",
       "price": "100",
-      "id": "vwIjcAa"
+      "id": "vwIjcAa",
+      "productCateID": "1"
+    },
+    {
+      "name": "cocacola",
+      "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645459720/bvjztlykr61fzv2ss6zo.jpg",
+      "desc": "a",
+      "price": "100",
+      "id": "vwIjcAa",
+      "productCateID": "1"
     },
     {
       "name": "heineken",
       "img": "http://res.cloudinary.com/dd0io3fh2/image/upload/v1645460343/q3ztqloxblfvwruqwvzt.jpg",
       "desc": "q",
       "price": "20",
-      "id": "a1jQKjw"
+      "id": "a1jQKjw",
+      "productCateID": "2"
+    }
+  ],
+  "productCates": [
+    {
+      "id": "1",
+      "name": "danh mục sản phẩm 1"
+    },
+    {
+      "id": "2",
+      "name": "danh mục sản phẩm 2"
     }
   ],
   "users": [

@@ -16,3 +16,8 @@ export const xoaSP = (id) => {
     const url = `/products/${id}`;
     return instance.delete(url);
 };
+
+export const getAllCate = () => {
+    const url = "/productCates";
+    return instance.get(url);
+};
