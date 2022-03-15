@@ -1,12 +1,4 @@
-// fake data
-// const data = [
-//     { id: 1, name: "Product A" },
-//     { id: 2, name: "Product B" },
-// ];
-
-import mongoose from "mongoose";
-
-const Product = mongoose.model("Products", { name: String });
+import Product from "../models/product";
 
 export const create = async (req, res) => {
     try {

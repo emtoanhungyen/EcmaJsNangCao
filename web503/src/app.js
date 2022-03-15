@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import mongoose from "mongoose";
 import productRoute from "./routes/product";
+import userRoute from "./routes/user";
 
 const app = express();
 // middleware
@@ -13,6 +14,15 @@ app.use(express.json());
 
 // routes
 app.use("/api", productRoute);
+app.use("/user", userRoute);
+
+// readdirSync(`${__dirname}/routes`).forEach((fileName) => {
+//     import(`./routes/${fileName}`)
+//         .then(({ default: router }) => router.default)
+//         .then((router) => {
+//             app.use("/api", router);
+//         });
+// });
 
 // connection db
 mongoose.connect("mongodb://localhost:27017/we16310")
