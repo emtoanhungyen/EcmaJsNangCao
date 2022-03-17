@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import productRoute from "./routes/product";
 import userRoute from "./routes/user";
 import newRoute from "./routes/new";
+import categoryRoute from "./routes/category";
 
 const app = express();
 // middleware
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api", productRoute);
 app.use("/user", userRoute);
 app.use("/new", newRoute);
+app.use("/api", categoryRoute);
 
 // readdirSync(`${__dirname}/routes`).forEach((fileName) => {
 //     import(`./routes/${fileName}`)
