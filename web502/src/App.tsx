@@ -6,8 +6,13 @@ import Websitelayout from './pages/layouts/Websitelayout'
 function App() {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    document.title = `Count : ${count}`
-  }, [count]);
+    // document.title = `Count : ${count}`
+    const getProducts = async () => {
+      const respone = await fetch('http://localhost:8000/api/products');
+      const data = await respone.json();
+      console.log(data);
+    }
+  }, []);
 
 
   return (
