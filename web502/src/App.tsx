@@ -1,13 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import AdminLayout from './pages/layouts/AdminLayout'
 import Websitelayout from './pages/layouts/Websitelayout'
 function App() {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    document.title = `Count : ${count}`
+  }, [count]);
+
 
   return (
     <div className="App">
+      <div>
+        {count} <button onClick={() => setCount(count + 1)}>Click</button>
+      </div>
       <header>
         <ul>
           <li>
