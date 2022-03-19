@@ -1,19 +1,22 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import React from 'react'
 
 type ProductAddProps = {
-    name: String,
+    name: string,
     onAdd: (product: InputForm) => void
 };
 type InputForm = {
-    name: String,
+    name: string,
     price: number,
 }
 const ProductAdd = (props: ProductAddProps) => {
     const { register, handleSubmit, formState: {errors}} = useForm<InputForm>();
+    const navigate = useNavigate();
 
     const onSubmit: SubmitHandler<InputForm> = data => {
         props.onAdd(data);
+        navigate("/admin/products")
     }
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
