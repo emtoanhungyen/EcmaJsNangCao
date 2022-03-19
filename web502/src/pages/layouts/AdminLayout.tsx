@@ -1,8 +1,12 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-const AdminLayout = () => {
+type Props = {};
+
+const AdminLayout = (props: Props) => {
   return (
-    <div>Dashboard Admin</div>
+    // <div>Dashboard Admin</div>
+    <Outlet />
   )
 }
 
