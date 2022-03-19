@@ -18,7 +18,17 @@ const ProductList = (props: PropductListProps) => {
                 <th></th>
             </thead>
             <tbody>
-                
+                {props.products.map( (item, index) => {
+                  return <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.price}</td>
+                    <td>
+                      <button>Remove</button>
+                    </td>
+                  </tr>
+                })}
             </tbody>
         </table>
     </div>
