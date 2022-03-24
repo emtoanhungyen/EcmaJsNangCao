@@ -10,6 +10,16 @@ export const signup = async (req, res) => {
         });
     }
 };
+export const signin = async (req, res) => {
+    try {
+        const user = await new User(req.body).save();
+        res.json(user);
+    } catch (error) {
+        res.status(400).json({
+            error: "Đăng ký không thành công",
+        });
+    }
+};
 export const listUser = async (req, res) => {
     try {
         const user = await User.find({}).exec();
