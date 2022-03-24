@@ -1,9 +1,19 @@
 {
   "products": [
     {
-      "name": "Product A",
+      "name": "Product A updateed",
       "price": "12345",
       "id": 1
+    },
+    {
+      "name": "Product B update",
+      "price": "100",
+      "id": 2
+    },
+    {
+      "name": "Lê Zăn Thựn",
+      "price": "200",
+      "id": 3
     }
   ]
 }

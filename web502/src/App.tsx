@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { add, list } from './api/products'
+import { add, list, update } from './api/products'
 import Home from './pages/Home'
 import AdminLayout from './pages/layouts/AdminLayout'
 import Websitelayout from './pages/layouts/Websitelayout'
 import ProductAdd from './pages/ProductAdd'
+import ProductEdit from './pages/ProductEdit'
 import ProductList from './pages/ProductList'
 import { IProduct } from './types/products'
 function App() {
@@ -22,6 +23,10 @@ function App() {
     const { data } = await add(product);
     setProducts([...products, data]);
   };
+  const onHandleUpdate = async (product: IProduct) => {
+    const { data } = await update(product);
+    setProducts(product.map(item => item.id == data.id ? data: item))
+  }
 
   return (
     <div className="App">
@@ -51,8 +56,9 @@ function App() {
 
           <Route path="admin" element={ <AdminLayout />}>
             <Route path="products">
-                <Route index element={ <ProductList />} />
+                <Route index element={ <ProductList products={products} /> } />
                 <Route path="add" element={ <ProductAdd name="Toan" onAdd={onHandleAdd} />} />
+                <Route path=":id/edit" element={ <ProductEdit onUpdate={onHandleUpdate} /> } />
             </Route>
           </Route>
 
