@@ -44,6 +44,12 @@
       "email": "thanh@gmail.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "username": "hi anh em",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "id": 4
     }
   ]
 }
