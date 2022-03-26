@@ -12,26 +12,33 @@ const userSchema = new Schema({
         required: true,
         unique: true,
     },
-    pass: {
+    salt: {
+        type: String,
+    },
+    password: {
         type: String,
         required: true,
+    },
+    role: {
+        type: Number,
+        default: 0,
     },
 }, []);
 
 userSchema.pre("save", function (next) {
     this.salt = uuidv4();
-    this.pass = this.encryptPassword(this.pass);
+    this.password = this.encryptPassword(this.password);
     next();
 });
-userSchema.method = {
-    authenticate(pass) {
-        return this.pass === this.encryptPassword(pass);
+userSchema.methods = {
+    authenticate(password) {
+        return this.password === this.encryptPassword(password);
     },
-    encryptPassword(pass) {
-        if (!pass) return;
+    encryptPassword(password) {
+        if (!password) return;
         try {
             // eslint-disable-next-line consistent-return
-            return createHmac("sha256", this.salt).update(pass).digest("hex");
+            return createHmac("sha256", this.salt).update(password).digest("hex");
         } catch (error) {
             console.log(error);
         }
