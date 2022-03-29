@@ -1,18 +1,24 @@
 // const express = require('express');
 import express from "express";
 import cors from "cors";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import morgan from "morgan";
 import mongoose from "mongoose";
+import swaggerUI from "swagger-ui-express";
+import YAML from "yamljs";
 import productRoute from "./routes/product";
 import userRoute from "./routes/user";
 import newRoute from "./routes/new";
 import categoryRoute from "./routes/category";
 
 const app = express();
+const swaggerJSDocs = YAML.load("./api.yaml");
 // middleware
 app.use(cors());
 app.use(morgan("tiny"));
 app.use(express.json());
+
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
 
 // routes
 app.use("/api", productRoute);
