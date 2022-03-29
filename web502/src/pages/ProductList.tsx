@@ -27,7 +27,7 @@ const ProductList = (props: Props) => {
                     <td>{item.price}</td>
                     <td>
                       <Link to={`/admin/products/${item.id}/edit`}>Edit</Link>
-                      <button>Remove</button>
+                      <button type='submit'>Remove</button>
                     </td>
                   </tr>
                 })}

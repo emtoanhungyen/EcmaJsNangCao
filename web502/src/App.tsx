@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Route, Routes } from 'react-router-dom'
-import { add, list, update } from './api/products'
+import { add, list, remove, update } from './api/products'
 import { addUser } from './api/users'
 import Home from './pages/Home'
 import AdminLayout from './pages/layouts/AdminLayout'
@@ -35,6 +35,11 @@ function App() {
   const onHandleSignup = async (user: TypeUser) => {
     const { data } = await addUser(user);
     setUsers([...users, data]);
+  }
+  const onHandleRemove = (id: number) => {
+    remove(id);
+    //reRender
+    setProducts(products.filter(item => item.id !== id));
   }
 
   return (
@@ -73,7 +78,7 @@ function App() {
 
           <Route path="admin" element={ <AdminLayout />}>
             <Route path="products">
-                <Route index element={ <ProductList products={products} /> } />
+                <Route index element={ <ProductList products={products} onRemove={onHandleRemove} /> } />
                 <Route path="add" element={ <ProductAdd name="Toan" onAdd={onHandleAdd} />} />
                 <Route path=":id/edit" element={ <ProductEdit onUpdate={onHandleUpdate} /> } />
             </Route>
